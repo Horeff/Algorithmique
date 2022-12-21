@@ -107,8 +107,8 @@ class figures():
     def expr_def(self, x):
         return 0
 
-    def circle(self, c : tuple, a : float = np.pi, r : float = 1, t : float = 0, expr = None) -> list :
-        ls = np.linspace(0,a,1000)
+    def circle(self, c : tuple, a : float = np.pi, r : float = 1, t : float = 0, expr = None, resolution : int = 1000) -> list :
+        ls = np.linspace(0,a,resolution)
         if expr is None:
             expr = self.expr_def
         x = [(expr(i)+r)*np.cos(i+t)+c[0] for i in ls]
